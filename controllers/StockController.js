@@ -106,7 +106,7 @@ class StockController {
               ? 
               // res.json({ message: `Id ${id} has been edited` })
               res.redirect('/stocks')
-              : res.json({ message: `Id ${id} has not been edited` });
+              : res.render('{ message: `Id ${id} has not been edited` }');
           })
           .catch((err) => {
             res.json(err);
