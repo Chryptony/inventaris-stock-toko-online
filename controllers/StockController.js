@@ -49,12 +49,19 @@ class StockController {
             quantity,
         })
             .then((result) => {
-                // res.json(result);
-                res.redirect('/stocks');
+                result
+                ? res.redirect('/stocks')
+                : res.redirect('SubmitPage.ejs');
             })
-            .catch((err) => {
-                res.json(err);
+            .catch((result) => {
+                result
+                ? res.render('SubmitPage.ejs')
+                : res.redirect('SubmitPage.ejs');
             });
+    }
+    static cancel(req,res) {
+        //
+        res.render('Stock.ejs')
     }
     static remove(req, res) {
         //
