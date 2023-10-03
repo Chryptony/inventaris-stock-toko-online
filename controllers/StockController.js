@@ -30,9 +30,11 @@ class StockController {
             .then((result)=> {
                 res.json(result);
         })
-        .catch((err) => {
-            res.json(err);
-        });
+        .catch((result) => {
+                result
+                ? res.render('SubmitPage.ejs')
+                : res.redirect('SubmitPage.ejs');
+            });
     }
 
     static submitPage(req,res){
