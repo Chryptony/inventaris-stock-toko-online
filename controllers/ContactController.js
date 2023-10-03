@@ -1,17 +1,6 @@
-const { stock} = require("../models");
+const { contact} = require("../models");
 
-class StockController {
-    static getStock(req,res) {
-        //
-        stock.findAll()
-            .then((stock) => {
-                // res.json(stock);
-                res.render('stock.ejs', {stock})
-            })
-            .catch((err)=> {
-                res.json(err);
-            });
-    }
+class ContactController {
     static getHome(req,res) {
         //
         home.getHome()
@@ -37,7 +26,7 @@ class StockController {
   static getStockById(req, res) {
     //
     const id = Number(req.params,id);
-    stock.findByPk(id)
+    contact.findByPk(id)
         .then((result)=> {
             res.json(result);
     })
@@ -48,17 +37,17 @@ class StockController {
         });
 }
 static getContactById(req, res) {
-  //
-  const id = Number(req.params,id);
-  stock.findByPk(id)
-      .then((result)=> {
-          res.json(result);
-  })
-  .catch((result) => {
-          result
-          ? res.render('ContactUs.ejs')
-          : res.redirect('ContactUs.ejs');
-      });
+    //
+    const id = Number(req.params,id);
+    contact.findByPk(id)
+        .then((result)=> {
+            res.json(result);
+    })
+    .catch((result) => {
+            result
+            ? res.render('ContactUs.ejs')
+            : res.redirect('ContactUs.ejs');
+        });
 }
     static submitPage(req,res){
         
@@ -68,7 +57,7 @@ static getContactById(req, res) {
     static submit(req,res) {
         //
         const { name, type, quantity} =req.body;
-        stock.create({
+        contact.create({
             name,
             type,
             quantity,
@@ -92,7 +81,7 @@ static getContactById(req, res) {
         //
         const id = +req.params.id;
         console.log(id)
-        stock.destroy({
+        contact.destroy({
             where:{id},
         })
         .then((result) => {
@@ -106,9 +95,9 @@ static getContactById(req, res) {
     }
     static editPage(req, res) {
         const id = +req.params.id;
-        stock.findByPk(id)
-          .then((stock) => {
-            res.render("editPage.ejs", { stock });
+        contact.findByPk(id)
+          .then((contact) => {
+            res.render("editPage.ejs", { contact });
           })
           .catch((err) => res.json(err));
       }
@@ -116,7 +105,7 @@ static getContactById(req, res) {
         //
         const id = +req.params.id;
         const { name, type, quantity } = req.body;
-        stock.update(
+        contact.update(
           {
             name,
             type,
@@ -130,7 +119,7 @@ static getContactById(req, res) {
             result[0]
               ? 
               // res.json({ message: `Id ${id} has been edited` })
-              res.redirect('/stocks')
+              res.redirect('/contact')
               : res.json('{ message: `Id ${id} has not been edited` }');
           })
           .catch((err) => {
@@ -139,9 +128,9 @@ static getContactById(req, res) {
     }
     static editQuantityPage(req, res) {
         const id = +req.params.id;
-        stock.findByPk(id)
-          .then((stock) => {
-            res.render("editQuantityPage.ejs", { stock });
+        contact.findByPk(id)
+          .then((contact) => {
+            res.render("editQuantityPage.ejs", { contact });
           })
           .catch((err) => res.json(err));
       }
@@ -149,7 +138,7 @@ static getContactById(req, res) {
         //
         const id = +req.params.id;
         const { quantity } = req.body;
-        stock.update(
+        contact.update(
           {
             quantity,
           },
@@ -170,4 +159,4 @@ static getContactById(req, res) {
     }
 }
 
-module.exports = StockController;
+module.exports = ContactController;
