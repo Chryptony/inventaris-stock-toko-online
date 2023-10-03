@@ -9,5 +9,7 @@ stockRoute.post("/cancel",StockController.cancel);
 stockRoute.get("/remove/:id",StockController.remove);
 stockRoute.get("/edit/:id",StockController.editPage)
 stockRoute.post("/edit/:id",StockController.edit);
+stockRoute.get("/editQuantity/:id",StockController.editQuantityPage)
+stockRoute.post("/editQuantity/:id",StockController.editQuantity);
 
 module.exports = stockRoute;

@@ -114,6 +114,37 @@ class StockController {
             res.json(err);
           });
     }
+    static editQuantityPage(req, res) {
+        const id = +req.params.id;
+        stock.findByPk(id)
+          .then((stock) => {
+            res.render("editQuantityPage.ejs", { stock });
+          })
+          .catch((err) => res.json(err));
+      }
+    static editQuantity(req, res) {
+        //
+        const id = +req.params.id;
+        const { quantity } = req.body;
+        stock.update(
+          {
+            quantity,
+          },
+          {
+            where: { id },
+          }
+        )
+          .then((result) => {
+            result[0]
+              ? 
+              // res.json({ message: `Id ${id} has been edited` })
+              res.redirect('/stocks')
+              : res.render('{ message: `Id ${id} has not been edited` }');
+          })
+          .catch((err) => {
+            res.json(err);
+          });
+    }
 }
 
 module.exports = StockController;
