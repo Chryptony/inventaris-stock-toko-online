@@ -11,5 +11,7 @@ stockRoute.get("/edit/:id",StockController.editPage)
 stockRoute.post("/edit/:id",StockController.edit);
 stockRoute.get("/editQuantity/:id",StockController.editQuantityPage)
 stockRoute.post("/editQuantity/:id",StockController.editQuantity);
+stockRoute.get("/contacts",StockController.getContact);
+stockRoute.get("/contacts/:id",StockController.getContactById);
 
 module.exports = stockRoute;

@@ -23,6 +23,28 @@ class StockController {
                 res.json(err);
             });
     }
+    static getHome(req,res) {
+        //
+        home.getHome()
+            .then((home) => {
+                // res.json(home);
+                res.redirect('/home')
+            })
+            .catch((err)=> {
+                res.json(err);
+            });
+    }
+    static getContact(req,res) {
+      //
+      contact.findAll()
+          .then((contact) => {
+              // res.json(stock);
+              res.render('ContactUs.ejs', {stock})
+          })
+          .catch((err)=> {
+              res.json(err);
+          });
+  }
     static getStockById(req, res) {
         //
         const id = Number(req.params,id);
@@ -36,6 +58,19 @@ class StockController {
                 : res.redirect('SubmitPage.ejs');
             });
     }
+    static getContactById(req, res) {
+      //
+      const id = Number(req.params,id);
+      contact.findByPk(id)
+          .then((result)=> {
+              res.json(result);
+      })
+      .catch((result) => {
+              result
+              ? res.render('ContactUs.ejs')
+              : res.redirect('ContactUs.ejs');
+          });
+  }
 
     static submitPage(req,res){
         
@@ -108,7 +143,7 @@ class StockController {
               ? 
               // res.json({ message: `Id ${id} has been edited` })
               res.redirect('/stocks')
-              : res.render('{ message: `Id ${id} has not been edited` }');
+              : res.json('{ message: `Id ${id} has not been edited` }');
           })
           .catch((err) => {
             res.json(err);

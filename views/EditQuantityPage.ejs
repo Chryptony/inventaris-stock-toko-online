@@ -42,13 +42,18 @@
           <div class="col-5 mx-auto">
             <form action="/stocks/editQuantity/<%=stock.id%>" method="post">
                 <div class="mb-3">
-                    <label for="">Quantity</label>
-                    <input 
-                    type ="text" 
-                    class="form-control"
-                    name ="quantity"
-                    place holder="Input how much is the quantity">
-                </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="Quantity" class="col-form-label py-3">Quantity</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="text" name="quantity" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                    <div class="col-auto">
+                      <span id="passwordHelpInline" class="form-text .fs-5">
+                        Pcs
+                      </span>
+                    </div>
                 <div class="container text-center">
                   <div class="row align-items-start">
                     <div class="col">
