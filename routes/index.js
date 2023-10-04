@@ -9,10 +9,17 @@ route.get("/", (req,res)=> {
 });
 route.get("/contacts", (req,res)=> {
     // res.json({
-    //     message: "Home Page",
+    //     message: "Kontak Kami",
     // });
 
     res.render('ContactUs.ejs')
+});
+route.get("/developers", (req,res)=> {
+    // res.json({
+    //     message: "Home Page",
+    // });
+
+    res.render('Developer.ejs')
 });
 
 const stockRoutes = require("./stock");

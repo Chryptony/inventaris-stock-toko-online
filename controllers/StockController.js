@@ -33,7 +33,18 @@ class StockController {
           .catch((err)=> {
               res.json(err);
           });
-  }
+    }
+    static getDeveloper(req,res) {
+      //
+      developer.getDeveloper()
+          .then((developer) => {
+              // res.json(developer);
+              res.redirect('/developers',)
+          })
+          .catch((err)=> {
+              res.json(err);
+          });
+    }
   static getStockById(req, res) {
     //
     const id = Number(req.params,id);
@@ -46,19 +57,6 @@ class StockController {
             ? res.render('SubmitPage.ejs')
             : res.redirect('SubmitPage.ejs');
         });
-}
-static getContactById(req, res) {
-  //
-  const id = Number(req.params,id);
-  stock.findByPk(id)
-      .then((result)=> {
-          res.json(result);
-  })
-  .catch((result) => {
-          result
-          ? res.render('ContactUs.ejs')
-          : res.redirect('ContactUs.ejs');
-      });
 }
     static submitPage(req,res){
         
