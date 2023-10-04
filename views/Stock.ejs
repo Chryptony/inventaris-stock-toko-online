@@ -43,7 +43,7 @@
       </nav>
     </div>
     <div class="container-fluid header">
-      <div className="text-bg text-center p-3" style="background-color: #5F9EA0;">
+      <div className="text-bg text-center p-3" style="background-color: #30336b;">
         <div class="container-fluid link-light fw-bold">
           <h1 class="text fw-bold">Stock yang tersedia</h1>
           <hr />
@@ -58,19 +58,19 @@
     </div>
   </div>
     <div class="container">
-      <table class="table table-bordered">
+      <table class="table">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Quantity</th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Quantity</th>
           </tr>
         </thead>
         <tbody>
           <% stock.forEach(stock => { %>
           <tr>
-            <td><%= stock.id %></td>
+            <th scope="row"><%= stock.id %></td>
             <td><%= stock.name %></td>
             <td><%= stock.type %></td>
             <td><%= stock.quantity %></td>
@@ -82,7 +82,7 @@
                 >X Delete</a
               >
               <a href="/stocks/edit/<%=stock.id%>" class="btn btn-sm btn-warning me-2"
-                >+ Update </a
+                >+ Update Id</a
               >
               <a href="/stocks/editQuantity/<%=stock.id%>" class="btn btn-sm btn-warning me-2"
                 >+ Update Quantity</a

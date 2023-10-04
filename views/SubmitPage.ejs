@@ -42,34 +42,49 @@
     </nav>
     <div class="container ">
       <div className=>
-        <h3 class="text-bg text-center link-light fw-bold p-3" style="background-color: #5F9EA0;">Submit Your Product name </h3>
+        <h3 class="text-bg text-center link-light fw-bold p-3" style="background-color: #30336b;">Submit Your Product name </h3>
         <div class="row">
           <div class="col-5 mx-auto">
             <form action="/stocks/submit" method="post">
               <div class="mb-3">
-                <label for="">Product Name</label>
-                <input 
-                type ="text" 
-                class="form-control" 
-                name ="name"
-                place holder="Input your product name">
-              </div>
-              <div class="mb-3">
-                <label for="">Product type</label>
-                <input 
-                type ="text" 
-                class="form-control" 
-                name ="type"
-                place holder="Input type of the product">
-              </div>
-              <div class="mb-3">
-                <label for="">Quantity</label>
-                <input 
-                type ="text" 
-                class="form-control" 
-                name ="quantity"
-                place holder="Input how much is the quantity" > 
-              </div>
+                <div class="row g-3 align-items-center">
+                  <div class="col-auto">
+                    <label for="Name" class="col-form-label py-3">Rename Product</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="text" name="name" class="form-control" aria-describedby="passwordHelpInline">
+                  </div>
+                  <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text .fs-5">
+                    </span>
+                  </div>
+                  <div class="mb-3">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <label for="Product Type" class="col-form-label py-3">Product Type</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="text" name="type" class="form-control" aria-describedby="passwordHelpInline">
+                      </div>
+                      <div class="col-auto">
+                        <span id="passwordHelpInline" class="form-text .fs-5">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="row g-3 align-items-center">
+                      <div class="col-auto">
+                        <label for="Quantity" class="col-form-label py-3">Quantity</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="number" name="quantity" class="form-control" aria-describedby="passwordHelpInline">
+                      </div>
+                      <div class="col-auto">
+                        <span id="passwordHelpInline" class="form-text .fs-5">
+                          Pcs
+                        </span>
+                      </div>
               <div class="container text-center">
                 <div class="row align-items-start">
                   <div class="col">

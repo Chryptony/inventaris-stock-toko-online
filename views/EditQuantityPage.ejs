@@ -37,7 +37,7 @@
 	  </nav>
     <div class="container ">
       <div className=>
-        <h3 class="text-bg text-center link-light fw-bold p-3" style="background-color: #2E5894;">Edit Quantity</h3>
+        <h3 class="text-bg text-center link-light fw-bold p-3" style="background-color: #30336b;">Edit Quantity</h3>
         <div class="row">
           <div class="col-5 mx-auto">
             <form action="/stocks/editQuantity/<%=stock.id%>" method="post">
@@ -47,7 +47,7 @@
                       <label for="Quantity" class="col-form-label py-3">Quantity</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name="quantity" class="form-control" aria-describedby="passwordHelpInline">
+                      <input type="number" name="quantity" class="form-control" aria-describedby="passwordHelpInline">
                     </div>
                     <div class="col-auto">
                       <span id="passwordHelpInline" class="form-text .fs-5">
