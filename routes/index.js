@@ -7,6 +7,13 @@ route.get("/", (req,res)=> {
 
     res.render('home.ejs')
 });
+route.get("/contacts", (req,res)=> {
+    // res.json({
+    //     message: "Home Page",
+    // });
+
+    res.render('ContactUs.ejs')
+});
 
 const stockRoutes = require("./stock");
 route.use("/stocks",stockRoutes);
