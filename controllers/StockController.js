@@ -34,12 +34,23 @@ class StockController {
               res.json(err);
           });
     }
-    static getDeveloper(req,res) {
+    static getAboutUs(req,res) {
       //
-      developer.getDeveloper()
-          .then((developer) => {
-              // res.json(developer);
-              res.redirect('/developers',)
+      about.getAboutUs()
+          .then((about) => {
+              // res.json(about);
+              res.redirect('/abouts',)
+          })
+          .catch((err)=> {
+              res.json(err);
+          });
+    }
+    static getSupport(req,res) {
+      //
+      support.getSupport()
+          .then((support) => {
+              // res.json(support);
+              res.redirect('/supports',)
           })
           .catch((err)=> {
               res.json(err);

@@ -14,12 +14,19 @@ route.get("/contacts", (req,res)=> {
 
     res.render('ContactUs.ejs')
 });
-route.get("/developers", (req,res)=> {
+route.get("/abouts", (req,res)=> {
     // res.json({
-    //     message: "Home Page",
+    //     message: "Tentang Kami",
     // });
 
-    res.render('Developer.ejs')
+    res.render('AboutUs.ejs')
+});
+route.get("/supports", (req,res)=> {
+    // res.json({
+    //     message: "Tentang Kami",
+    // });
+
+    res.render('Support.ejs')
 });
 
 const stockRoutes = require("./stock");
