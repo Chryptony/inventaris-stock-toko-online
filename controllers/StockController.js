@@ -67,7 +67,7 @@ class StockController {
             result
             ? res.render('SubmitPage.ejs')
             : res.redirect('SubmitPage.ejs');
-    });
+        });
 }
     static submitPage(req,res){
         
