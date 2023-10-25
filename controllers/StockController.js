@@ -69,6 +69,9 @@ class StockController {
             : res.redirect('SubmitPage.ejs');
         });
     }
+    static promptPage(req, res) {
+      res.render("promptPage.ejs")
+    }
     static submitPage(req,res){
         
         res.render('SubmitPage.ejs')

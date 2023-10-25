@@ -28,7 +28,13 @@ route.get("/supports", (req,res)=> {
 
     res.render('Support.ejs')
 });
+route.get("/prompts", (req,res)=> {
+    // res.json({
+    //     message: "Kontak Kami",
+    // });
 
+    res.render('PromptPage.ejs')
+});
 const stockRoutes = require("./stock");
 route.use("/stocks",stockRoutes);
 // stocknya harus pakai s di kata stock ("/stocks") . kalau gak pakai s jadinya error

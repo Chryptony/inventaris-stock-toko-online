@@ -14,5 +14,6 @@ stockRoute.post("/editQuantity/:id",StockController.editQuantity);
 stockRoute.get("/contacts",StockController.getContact);
 stockRoute.get("/abouts",StockController.getAboutUs);
 stockRoute.get("/supports",StockController.getSupport);
+stockRoute.get("/prompt",StockController.promptPage)
 
 module.exports = stockRoute;
